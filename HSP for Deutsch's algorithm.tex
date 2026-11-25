@@ -1,0 +1,91 @@
+\documentclass[journal,12pt, onecolumn]{IEEEtran}
+
+% Packages
+
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\usepackage{braket}
+\usepackage{hyperref}
+\usepackage{fontspec}
+
+\usepackage{readable-source}
+
+\setmainfont{Cambria}
+\setmathfont{Cambria Math}
+
+% Initializations
+\hbadness=99999
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+
+
+\title{Review of HSP for Deutsch's algorithm}
+\author{
+Aarohi Bhavsar \\
+Aarohi.Bhavsar@rockets.utoledo.edu
+Date: November 12, 2026 \\
+Supervisor: Hossam Shalaby
+The University of Toledo
+}
+
+\begin{document}
+    \maketitle
+    \begin{abstract}
+        \par{
+            Deutsch's algorithm is the one of the earliest instances of solving a case of the Hidden Subgroup. This algorithm efficiently solves for a bit of partial information, $c$, about the definition of a function
+        }
+        
+    \end{abstract}
+    \eq{f:G\rightarrow{}X,}
+        
+        given
+        \begin{equation}
+             G=\B{0,1},\quad X=\B{0,1},\quad (\text{and its quantum gate formulation}, U_f)
+        \end{equation}
+                   
+    
+        
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1\textwidth]{Deutsch's Circuit.png}
+        \caption{Deutsch's Circuit}
+    \end{figure} 
+    \section{State Analysis}
+
+    \begin{equation}
+        \begin{aligned}
+            |𝜓_0 ⟩ &= |0⟩_{𝑞_0} |1⟩_{𝑞_1}
+            \\
+            |𝜓_1 ⟩& = (𝐻⊗𝐻)|𝜓_0 ⟩
+            \\
+            &= (𝐻⊗𝐻) |0⟩_{𝑞_0} |1⟩_{𝑞_1}
+            \\
+            &= |+⟩_{𝑞_0} |−⟩_{𝑞_1}
+            &\qquad &= ½(|0⟩_{𝑞_0} |0⟩_{𝑞_1}−|0⟩_{𝑞_0} |1⟩_{𝑞_1}+|1⟩_{𝑞_0} |0⟩_{𝑞_1}−|1⟩_{𝑞_0} |1⟩_{𝑞_1})
+            \\
+            |𝜓_2 ⟩ &= 𝑈_𝑓 |𝜓_1 ⟩
+            \\
+            &= 𝑈_𝑓 |+⟩_{𝑞_0} |−⟩_{𝑞_1}
+            &\qquad &= ½(𝑈_𝑓 |0⟩_{𝑞_0} |0⟩_{𝑞_1}−𝑈_𝑓 |0⟩_{𝑞_0} |1⟩_{𝑞_1}+𝑈_𝑓 |1⟩_{𝑞_0} |0⟩_{𝑞_1}−𝑈_𝑓 |1⟩_{𝑞_0} |1⟩_{𝑞_1})
+        \end{aligned}
+    \end{equation}
+
+    
+    % \eqaligned{
+    %     {\forall}C, {C\prime}:
+    %     \p{{\exists}g,g\prime{}\in{}G, C} &= g{\circ}H
+    %     {\wedge}
+    %         {C\prime} = {g\prime}{\circ}H\\&
+    %         f\p{C} = \B{f\p{c}:c{\in}C}
+    %     {\wedge}
+    %         f\p{C} = f\p{C\prime}{\leftrightarrow}{C\prime}= C{\prime}
+    %     {\wedge}
+    %         {\forall}c,{c\prime}{\in}C,f\p{c}=f\p{c{\prime}}
+    % }
+        
+    
+\end{document}
+
+
